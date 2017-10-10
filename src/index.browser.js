@@ -10,7 +10,7 @@
  * @return {HTMLCanvasElement} A canvas dom element with
  * height and width set to the given values.
  */
-export function createCanvas(width, height) {
+function createCanvas(width, height) {
   const canvas = document.createElement('canvas');
   canvas.width = width;
   canvas.height = height;
@@ -26,7 +26,7 @@ export function createCanvas(width, height) {
  * @return {HTMLImageElement} An image element
  * referring to the given url.
  */
-export function loadImage(src) {
+function loadImage(src) {
   return new Promise((resolve, reject) => {
     const image = new window.Image();
     image.addEventListener('load', () => resolve(image));
@@ -34,3 +34,9 @@ export function loadImage(src) {
     image.src = src;
   });
 }
+
+module.exports = {
+  createCanvas,
+  loadImage,
+};
+

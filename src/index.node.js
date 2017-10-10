@@ -15,7 +15,7 @@ const { Image } = Canvas;
  * @return {Canvas} A canvas object with
  * height and width set to the given values.
  */
-export function createCanvas(width, height) {
+function createCanvas(width, height) {
   return new Canvas(width, height);
 }
 
@@ -28,7 +28,7 @@ export function createCanvas(width, height) {
  * @return {Image} An image element referring to
  * the given path.
  */
-export function loadImage(path) {
+function loadImage(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, (err, data) => {
       if (err) {
@@ -40,3 +40,8 @@ export function loadImage(path) {
     });
   });
 }
+
+module.exports = {
+  createCanvas,
+  loadImage,
+};
