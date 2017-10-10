@@ -32,9 +32,12 @@ function loadImage(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, (err, data) => {
       if (err) {
-        return reject(err);
+        reject(err);
+        return;
       }
       const image = new Image();
+      image.onload = () => resolve(image);
+      image.onerror = err => reject(err);
       image.src = data;
       return resolve(image);
     });
