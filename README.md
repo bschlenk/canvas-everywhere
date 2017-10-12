@@ -7,7 +7,16 @@ other libraries that draw onto a canvas.
 
 `npm install canvas-everywhere`
 
+If running on node, also install `canvas`:
+
+`npm install canvas`
+
 ## Overview
+
+Canvas everywhere is a simple wrapper around canvas that allows
+libraries that rely on canvas to be written in a platform agnostic
+manner. When running on node, the `canvas` library will be used. When
+running in the browser, `document.createElement('canvas')` will be used.
 
 Canvas everywhere relies on having `canvas` installed when using with
 node. `Canvas` is is marked as a peer dependency, but note that it is
@@ -24,11 +33,15 @@ const { createCanvas, loadImage } = requrie('canvas-everywhere');
 // es module
 import { createCanvas, loadImage } from 'canvas-everywhere';
 
+// initial width and height must be given, but they can be changed
+// later by setting the width and height properties of the canvas.
 const canvas = createCanvas(400, 600);
-canvas.fillRect('#baddad');
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = '#baddad';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 loadImage('path/to/image.png').then((img) => {
-  canvas.drawImage(img);
+  ctx.drawImage(img, 0, 0);
 });
 
 ```
