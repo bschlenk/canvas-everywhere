@@ -8,7 +8,7 @@ class Canvas {
 class Image {
   constructor() {
     this.events = {};
-    this._src = null;
+    this.source = null;
   }
 
   addEventListener(event, fn) {
@@ -16,15 +16,20 @@ class Image {
   }
 
   set src(value) {
+    this.source = value;
     setImmediate(() => {
       this.events.load();
     });
+  }
+
+  get src() {
+    return this.source;
   }
 }
 
 class ErrorImage extends Image {
   set src(value) {
-    this._src = value;
+    this.source = value;
     setImmediate(() => {
       this.events.error(new Error('failed to load image'));
     });

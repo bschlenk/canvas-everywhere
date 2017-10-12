@@ -6,7 +6,8 @@
   "browser": "src/index.browser.js",
   "scripts": {
     "test": "jest --testPathIgnorePatterns '.*/__tests__/helpers/.*'",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",

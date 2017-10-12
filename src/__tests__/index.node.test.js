@@ -1,7 +1,6 @@
 /* eslint-env node, jest */
 
 const { join } = require('path');
-const { Canvas, Image, ErrorImage } = require('./helpers/mocks');
 const { createCanvas, loadImage } = require('../index.node');
 
 describe('index.node', () => {

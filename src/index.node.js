@@ -39,7 +39,7 @@ function loadImage(path) {
       image.onload = () => resolve(image);
       image.onerror = err => reject(err);
       image.src = data;
-      return resolve(image);
+      resolve(image);
     });
   });
 }
