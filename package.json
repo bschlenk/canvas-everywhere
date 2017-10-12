@@ -5,7 +5,8 @@
   "main": "src/index.node.js",
   "browser": "src/index.browser.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --testPathIgnorePatterns '.*/__tests__/helpers/.*'",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",

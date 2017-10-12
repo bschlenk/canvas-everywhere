@@ -32,3 +32,10 @@ loadImage('path/to/image.png').then((img) => {
 });
 
 ```
+
+## Testing
+
+`npm run test`
+
+This runs the test suite using jest. `canvas` must be installed in order
+for the tests to pass.
