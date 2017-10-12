@@ -1,6 +1,6 @@
 {
   "name": "canvas-everywhere",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A wrapper around canvas, allowing one to use canvas in the browser or node with the same code.",
   "main": "src/index.node.js",
   "browser": "src/index.browser.js",
