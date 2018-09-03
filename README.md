@@ -1,5 +1,7 @@
 # Canvas Everywhere
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/bschlenk/canvas-everywhere.svg)](https://greenkeeper.io/)
+
 A library intended to simplify creating
 other libraries that draw onto a canvas.
 
